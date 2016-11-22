@@ -69,7 +69,7 @@ shinyServer(function(input, output, session){
   output$contents <- renderTable(myData())
   
   observe({
-    volumes <- c("UserFolder" = "P:/Risk/Risk - Risk Management")
+    volumes <- c("UserFolder" = "C:/")
     shinyFileSave(input, "save", roots=volumes, session=session)
     fileinfo <- parseSavePath(volumes, input$save)
     if(nrow(fileinfo) > 0){
